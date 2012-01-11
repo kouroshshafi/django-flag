@@ -373,7 +373,7 @@ class FlagInstance(models.Model):
         Show the flagged object in the unicode string
         """
         app_label, model = get_content_type_tuple(
-                self.flagged_content.content_type_id)
+                self.flagged_content.content_object)
         return u'flag on %s.%s #%s by user #%s' % (
                 app_label, model, self.flagged_content.object_id, self.user_id)
 
