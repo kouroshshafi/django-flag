@@ -124,7 +124,7 @@ class FlaggedContent(models.Model):
         """
         Show the flagged object in the unicode string
         """
-        app_label, model = get_content_type_tuple(self.content_type_id)
+        app_label, model = get_content_type_tuple(self.content_object)
         return u'%s.%s #%s' % (app_label, model, self.object_id)
 
     def content_settings(self, name):
